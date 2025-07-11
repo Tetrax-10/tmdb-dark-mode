@@ -4,11 +4,11 @@ A clean, dark-themed user style for [TMDB](https://www.themoviedb.org), designed
 
 I originally created it for transparency support and hosted on [sameerasw/my-internet](https://github.com/sameerasw/my-internet), this version just adds a dark background to support non-transparent browsers like Chrome, Edge, Firefox, etc...
 
-## 🌑 Features
+## 🎉 Features
 
--   Minimal dark background (default)
--   Custom background image
--   OS-level transparency (Zen Browser only)
+-   [Minimal dark background (default)](#dark-background-default)
+-   [Custom background image](#custom-background-image-supports-all-browsers)
+-   [OS-level transparency (Zen Browser only)](#native-transparency-zen-browser)
 -   Fully documented and customizable CSS
 
 ## 🚀 Installation
