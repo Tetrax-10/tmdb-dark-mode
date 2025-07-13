@@ -402,6 +402,9 @@
     /* network page */
     div.header div.inner_content.tight div.meta, /* network page header */
 
+    /* admin page */
+    body:has(> div.header > h2 > a[href^="/admin"]) .btn-secondary, /* admin page edits page filter button */
+
     /* docs page */
     .rm-Guides_loading:not(.rm-Guides-SuperHub)::before, /* docs page loading */
 
@@ -1372,6 +1375,7 @@
         .glyphicons_v2.code,
         .glyphicons_v2.chat-message,
         .glyphicons_v2.eye,
+        .glyphicons_v2.sort,
         .glyphicons_v2.play,
         img[src$="/t/p/original/e2XGMhHKR9QKE8huwuP0xqqZ9zs.svg"], /* edit page videos youtube icon */
         img[src$="/t/p/original/flerIzLJEvm4l98TYf3gOy639bb.svg"], /* edit page videos vimeo icon */
