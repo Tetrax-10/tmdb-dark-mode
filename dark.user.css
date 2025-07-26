@@ -362,6 +362,7 @@
     /* changes page */
     .pagy a:not(.gap).current, /* changes page current page number */
     p.new_button.rounded, section.content_score div.content_score div, div.leaderboard div.histogram div.bar span, /* changes page contributors graph */
+    table.changes_with_aggregates span.status, /* "Banned" text next to name */
 
     /* list page */
     .list_wrap ol.list_items > span > li, /* list page grid view posters bg (custom) */
@@ -846,8 +847,8 @@
         color: rgb(var(--trans-theme-link-text)) !important;
     }
 
-    /* Previous page • Next page • Last page */
-    p a {
+    #jump_to_last, /* Jump to last post */
+    p a /* Previous page • Next page • Last page */ {
         color: rgb(var(--trans-theme-link-text)) !important;
     }
 
@@ -1497,7 +1498,7 @@
     }
 
     /* white input element while page load (don't use important) */
-    input:not([class*="k-"]),
+    input:not([class*="k-"]):not([id^="API"]),
     select:not([class*="k-"]) {
         background-color: transparent;
         border-color: transparent;
@@ -1522,7 +1523,8 @@
 
     /* themoviedb-no footer */
     #footer, /* review page */
-    footer {
+    /* all footers except api documentation page */
+    footer:not([class^="API"]) {
         display: none !important;
     }
 
