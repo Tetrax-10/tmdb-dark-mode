@@ -635,23 +635,51 @@
 
     /* ------------------------- fix images page ------------------------- */
 
-    li[id^="settings_panel_language_"] {
-        &:hover /* left side panel hover */,
-        ul > li > a:hover /* left side panel region hover */ {
+    /* left side panel first language selection top gap */
+    #image_menu.with_counts.media-nav-content {
+        padding-top: 0 !important;
+    }
+
+    /* left side panel */
+    #image_menu.with_counts li {
+        &:not(:has(> a[class*=" bg-neutral-"])):hover, /* language group hover */
+        & > a:hover /* language & region hover */ {
             background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
         }
+        &:has(> a[class*=" bg-neutral-"]):hover /* language group hover (when that group is selected) */ {
+            background-color: transparent !important;
+        }
 
-        a span.md\:rounded-lg /* left side panel image count and region code */ {
+        /* image count and region code */
+        a span.md\:rounded-lg {
             background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
             border: none !important;
         }
 
-        ul > li.bg-neutral-100, /* left side panel selected region (language focus) */
-        ul > li > a.bg-neutral-200\/50, /* left side panel selected region (region focus) */
-        a.bg-neutral-200 /* left side panel selected language */ {
+        a.bg-neutral-200 /* language (when the language group is selected) */ {
+            background-color: rgba(var(--trans-theme-primary-bg), 0.1) !important;
+            color: rgb(var(--trans-theme-link-text)) !important;
+        }
+        a.bg-neutral-200:has(+ ul a.bg-neutral-200\/50) /* language (when a region is selected) */ {
+            color: rgb(var(--trans-theme-primary-text)) !important;
+        }
+        &.bg-neutral-100 /* region (when the language group is selected) */ {
             background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
             color: rgb(var(--trans-theme-link-text)) !important;
         }
+        a.bg-neutral-200\/50 /* region (when a region is selected) */ {
+            background-color: transparent !important;
+            color: rgb(var(--trans-theme-link-text)) !important;
+
+            &:hover {
+                background-color: rgba(var(--trans-theme-primary-bg), 0.1) !important;
+            }
+        }
+    }
+
+    /* left side panel hide no language region  */
+    #image_menu.with_counts li#settings_panel_language_xx > ul {
+        display: none !important;
     }
 
     /* image card language selector */
