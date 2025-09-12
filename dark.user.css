@@ -195,6 +195,9 @@
     .k-grid-footer, .k-grid-header, .k-group-cell, .k-grouping-header, .k-grouping-row, .k-selection-aggregates, .k-table-footer, .k-table-group-row, .k-table-group-sticky-header, .k-table-header, .k-table-tfoot, .k-table-thead, /* edit page alternative titles "Title" "Type" "Country" */
     div.item a, div.item p a, /* edit page cast people name */
 
+    /* translations page */
+    .text-\[var\(--primaryColorContrast\)\], /* left sidebar heading "Translations" text */
+
     /* changes page */
     .k-grid, /* changes page n Changes and other labels */
     p.new_button.rounded, /* changes page contributors graph */
@@ -632,15 +635,23 @@
 
     /* ------------------------- fix images page ------------------------- */
 
-    div.column_wrapper ul.panel.kendo li.sub span, div.column_wrapper ul.panel.with_counts li span, /* left side panel image count */
-    div.column_wrapper ul.panel.with_counts li.selected span, div.column_wrapper ul.panel.with_counts li:hover span, ul.panel.kendo.k-panelbar ul > .k-item.selected span, ul.panel.kendo.k-panelbar ul > .k-item:hover span /* left side panel image count (hover) */ {
-        background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
-        color: unset !important;
-    }
+    li[id^="settings_panel_language_"] {
+        &:hover /* left side panel hover */,
+        ul > li > a:hover /* left side panel region hover */ {
+            background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
+        }
 
-    div.column_wrapper ul.panel.with_counts li.selected a, /* left side panel selected */
-    div.column_wrapper ul.panel.with_counts h3.category /* left side panel selected (modified) */ {
-        color: rgb(var(--trans-theme-link-text)) !important;
+        a span.md\:rounded-lg /* left side panel image count and region code */ {
+            background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
+            border: none !important;
+        }
+
+        ul > li.bg-neutral-100, /* left side panel selected region (language focus) */
+        ul > li > a.bg-neutral-200\/50, /* left side panel selected region (region focus) */
+        a.bg-neutral-200 /* left side panel selected language */ {
+            background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
+            color: rgb(var(--trans-theme-link-text)) !important;
+        }
     }
 
     /* image card language selector */
@@ -994,6 +1005,18 @@
         .glyphicons_v2.heart {
             filter: invert(1) !important;
         }
+    }
+
+    /* ------------------------- fix alternative titles page ------------------------- */
+
+    ul.panel.with_counts li span, /* left side panel count */
+    /* left side panel count selected/hover */
+    div.column_wrapper ul.panel.with_counts li.selected span,
+    div.column_wrapper ul.panel.with_counts li:hover span,
+    ul.panel.kendo.k-panelbar ul > .k-item.selected span,
+    ul.panel.kendo.k-panelbar ul > .k-item:hover span {
+        background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
+        color: rgb(var(--trans-theme-primary-text)) !important;
     }
 
     /* ------------------------- fix admin page ------------------------- */
