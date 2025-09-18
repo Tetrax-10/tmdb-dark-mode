@@ -635,9 +635,10 @@
 
     /* ------------------------- fix images page ------------------------- */
 
-    /* left side panel first language selection top gap */
+    /* left side panel first language selection top gap and last language bottom gap */
     #image_menu.with_counts.media-nav-content {
         padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
 
     /* left side panel */
@@ -1144,6 +1145,12 @@
         background-color: rgb(var(--trans-theme-solid-bg)) !important;
     }
 
+    /* reply as (messaging place) */
+    #reply_as_self,
+    #reply_as_support {
+        background-color: rgb(var(--trans-theme-solid-bg)) !important;
+    }
+
     /* hide message box resize icon */
     #message_textarea {
         resize: none !important;
@@ -1571,6 +1578,14 @@
     }
 
     /* ------------------------- features ------------------------- */
+
+    /* themoviedb-block ads */
+    tonefuse-ad {
+        display: none !important;
+    }
+    body {
+        overflow: unset !important;
+    }
 
     /* themoviedb-no footer */
     #footer, /* review page */
