@@ -1556,8 +1556,8 @@
     }
 
     /* white input element while page load (don't use important) */
-    input:not([class*="k-"]):not([id^="API"]),
-    select:not([class*="k-"]) {
+    input:not([class*="k-"]):not([id^="API"]):not([id][class*="Input"]),
+    select:not([class*="k-"]):not([id][class*="Select"]) {
         background-color: transparent;
         border-color: transparent;
         color: transparent;
