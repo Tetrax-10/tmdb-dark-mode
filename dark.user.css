@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           TMDB Dark Mode
 @description    Dark Mode for TMDB
-@version        1.6
+@version        1.7
 @namespace      https://github.com/Tetrax-10/tmdb-dark-mode
 @homepageURL    https://github.com/Tetrax-10/tmdb-dark-mode
 @supportURL     https://github.com/Tetrax-10/tmdb-dark-mode/issues
@@ -745,12 +745,12 @@
         opacity: unset !important;
     }
 
-    /* [extension] find duplciate images red image card */
+    /* [userscript] find duplciate images red image card */
     section.inner_content ul.images li.card div.info.find-dups-red-card {
         background-color: rgba(var(--trans-theme-red), 0.15) !important;
     }
 
-    /* [extension] TheMovieDB Image Translations script left side panel text */
+    /* [userscript] TheMovieDB Image Translations script left side panel text */
     div.column_wrapper ul.panel.with_counts li[style="font-size: 0.8em;"] a {
         color: rgba(var(--trans-theme-primary-text), 0.55) !important;
     }
@@ -862,6 +862,54 @@
     .d2h-code-line ins,
     .d2h-code-side-line ins {
         background-color: rgba(var(--trans-theme-green), 0.2) !important;
+    }
+
+    /* admin changes page image popup size on hover */
+    body:has(> div > h2 > a[href="/admin/dashboard"]) .k-child-animation-container {
+        &:has(> .k-tooltip.k-popup.image_popup.profile),
+        &:has(> .k-tooltip.k-popup.image_popup.poster) {
+            img {
+                width: 200px !important;
+            }
+        }
+
+        &:has(> .k-tooltip.k-popup.image_popup.avatar),
+        &:has(> .k-tooltip.k-popup.image_popup.backdrop) {
+            img {
+                width: 300px !important;
+            }
+        }
+
+        &:has(> .k-tooltip.k-popup.image_popup.logo),
+        &:has(> .k-tooltip.k-popup.image_popup.title_logo) {
+            img {
+                width: 400px !important;
+            }
+        }
+    }
+
+    /* [userscript] TheMovieDB Revert Changes checkbox */
+    input[type="checkbox"][class^="rvt-chg-"] {
+        background-color: rgba(var(--trans-theme-primary-text), 0.9) !important;
+
+        &:checked {
+            background-color: #286cc9 !important;
+        }
+
+        &:disabled {
+            background-color: rgba(var(--trans-theme-primary-text), 0.3) !important;
+        }
+
+        &:disabled:checked {
+            background-color: rgba(var(--trans-theme-primary-text), 0.3) !important;
+        }
+
+        &:disabled:checked::after {
+            border-color: rgb(var(--trans-theme-primary-text)) !important;
+        }
+    }
+    #rvt-chg-settings-icon {
+        fill: rgba(var(--trans-theme-primary-text), 0.9) !important;
     }
 
     /* ------------------------- fix discussion page ------------------------- */
@@ -1145,6 +1193,11 @@
         background-color: rgb(var(--trans-theme-solid-bg)) !important;
     }
 
+    /* TMDB Support's message color */
+    div.you.fLccjMiKaOaKcgeNKfabMLjP div.message {
+        background-color: rgba(var(--tmdbLightBlue), 0.15) !important;
+    }
+
     /* reply as (messaging place) */
     #reply_as_self,
     #reply_as_support {
@@ -1264,13 +1317,23 @@
     }
 
     /* images page left side panel header icons tooltip small triangle */
-    .tmdb_theme .k-callout-s {
+    .tmdb_theme .k-callout {
         border-top-color: rgb(var(--trans-theme-solid-bg)) !important;
     }
 
     /* discussion page left side panel notification tooltip small triangle */
-    .tmdb_theme_white .k-callout-w {
+    .tmdb_theme_white .k-callout {
         border-right-color: rgb(var(--trans-theme-solid-bg)) !important;
+    }
+
+    /* small triangle by custom tooltip by userscripts */
+    .k-tooltip .k-callout {
+        color: rgb(var(--trans-theme-solid-bg)) !important;
+    }
+
+    /* border for tooltip visibility */
+    .k-tooltip.k-popup {
+        border: 1px solid rgba(var(--trans-theme-primary-text), 0.1) !important;
     }
 
     /* ------------------------- fix popups ------------------------- */
@@ -1354,8 +1417,14 @@
     /* ------------------------- fix icons ------------------------- */
 
     @media (prefers-color-scheme: dark) {
-        section.facts div.social_links a.social_link /* title page right sidebar icons */ {
+        section.full_wrapper div.social_links a.social_link /* title page right sidebar icons */ {
             filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+
+            /* [userscript] IMDb TMDB Letterboxd Linker */
+            #linker-letterboxd-svg,
+            #linker-imdb-svg {
+                filter: brightness(3.4) !important;
+            }
         }
 
         /* bright white icons */
