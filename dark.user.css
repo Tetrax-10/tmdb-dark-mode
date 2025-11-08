@@ -1652,7 +1652,7 @@
     tonefuse-ad {
         display: none !important;
     }
-    body {
+    body:has(tonefuse-ad) {
         overflow: unset !important;
     }
 
