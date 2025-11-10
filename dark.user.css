@@ -911,6 +911,9 @@
     #rvt-chg-settings-icon {
         fill: rgba(var(--trans-theme-primary-text), 0.9) !important;
     }
+    .rvt-chg-link {
+        color: rgb(var(--trans-theme-link-text)) !important;
+    }
 
     /* ------------------------- fix discussion page ------------------------- */
 
