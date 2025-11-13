@@ -1702,6 +1702,20 @@
     div.card.v4.list div.details /* list page cards */ {
         background-color: rgba(var(--trans-theme-secondary-bg), 0.6) !important;
     }
+    /* list page top image */
+    .list_wrap {
+        div.backdrop {
+            background-color: unset !important;
+            &::before {
+                background-color: rgba(var(--trans-theme-secondary-bg), 0.6) !important;
+                mix-blend-mode: unset !important;
+            }
+        }
+        img.backdrop {
+            filter: unset !important;
+            mix-blend-mode: unset !important;
+        }
+    }
 
     /* themoviedb-hide primary color */
     /* profile page with no background image */
@@ -1751,13 +1765,13 @@
 
     /* ------------------------- background customization ------------------------- */
 
-    /* remove everything below me to enable system level transparency (works only on browsers that allow transparency eg: zen browser) */
+    /* remove everything below this to enable system level transparency (works only on browsers that allow transparency eg: zen browser) */
     html {
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
         background-attachment: fixed !important;
-        background-image: url("https://image.tmdb.org/t/p/w780/8GRFVMdo2L9Kybh1wuzxtN0qdce.jpg") !important; /* adjust me for bg img url */
+        background-image: url("https://image.tmdb.org/t/p/w780/8GRFVMdo2L9Kybh1wuzxtN0qdce.jpg") !important; /* adjust this for bg img url */
     }
     html::after {
         content: "" !important;
@@ -1768,14 +1782,14 @@
         height: 100% !important;
         pointer-events: none !important;
         z-index: -1 !important;
-        backdrop-filter: blur(20px) !important; /* adjust me for blur amount */
-        -webkit-backdrop-filter: blur(20px) !important; /* adjust me for blur amount (safari browser) */
-        background-color: rgba(0, 0, 0, 0.7) !important; /* adjust me for bg img overlay color (decimal is for transparency) */
+        backdrop-filter: blur(20px) !important; /* adjust this for blur amount */
+        -webkit-backdrop-filter: blur(20px) !important; /* adjust this for blur amount (safari browser) */
+        background-color: rgba(0, 0, 0, 0.7) !important; /* adjust this for bg img overlay color (decimal is for transparency) */
     }
 
-    /* remove everything below me to enable custom background image */
+    /* remove everything below this to enable custom background image */
     html {
-        background-color: rgb(30, 32, 33) !important; /* adjust me for bg color */
+        background-color: rgb(30, 32, 33) !important; /* adjust this for bg color */
         background-image: none !important;
     }
     html::after {
