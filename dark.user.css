@@ -1705,8 +1705,10 @@
     div.card.v4.list div.details /* list page cards */ {
         background-color: rgba(var(--trans-theme-secondary-bg), 0.6) !important;
     }
-    /* list page top image */
-    .list_wrap {
+    div.header.gradient.background_image /* user page top image */ {
+        background-blend-mode: darken !important;
+    }
+    .list_wrap /* list page top image */ {
         div.backdrop {
             background-color: unset !important;
             &::before {
