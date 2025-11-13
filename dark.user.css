@@ -194,6 +194,8 @@
     .k-data-table, .k-table, /* edit page alternative titles */
     .k-grid-footer, .k-grid-header, .k-group-cell, .k-grouping-header, .k-grouping-row, .k-selection-aggregates, .k-table-footer, .k-table-group-row, .k-table-group-sticky-header, .k-table-header, .k-table-tfoot, .k-table-thead, /* edit page alternative titles "Title" "Type" "Country" */
     div.item a, div.item p a, /* edit page cast people name */
+    .k-input-solid .k-input-prefix, .k-input-solid .k-input-suffix, /* crew page filter popup "x" close button */
+    .k-popup, /* crew page filter popup */
 
     /* translations page */
     .text-\[var\(--primaryColorContrast\)\], /* left sidebar heading "Translations" text */
@@ -349,6 +351,7 @@
     .media-nav-panel > h3, /* edit page left side panel header (custom) */
     div.error_status.info h2, /* edit page cast "A few notes about editing the cast" heading */
     .k-form-field-wrap > .k-input.k-textbox, /* edit page release information popup "note" input (custom) */
+    .k-input-solid .k-input-prefix, .k-input-solid .k-input-suffix, /* crew page filter popup "x" close button */
 
     /* translations page */
     .media-nav-panel, table.media-translations, /* translations page left side panel (modified) */
