@@ -650,12 +650,18 @@
 
     /* left side panel */
     #image_menu.with_counts li {
+        a.group\/language /* language group */ {
+            background-color: rgba(var(--trans-theme-primary-bg), 0.028) !important;
+        }
         &:not(:has(> a[class*=" bg-neutral-"])):hover, /* language group hover */
         & > a:hover /* language & region hover */ {
             background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
         }
         &:has(> a[class*=" bg-neutral-"]):hover /* language group hover (when that group is selected) */ {
             background-color: transparent !important;
+        }
+        a.group\/region:hover /* region group hover */ {
+            background-color: rgba(var(--trans-theme-primary-bg), 0.01) !important;
         }
 
         /* image count and region code */
@@ -672,7 +678,7 @@
             color: rgb(var(--trans-theme-primary-text)) !important;
         }
         &.bg-neutral-100 /* region (when the language group is selected) */ {
-            background-color: rgba(var(--trans-theme-primary-bg), var(--trans-theme-transparency-lvl)) !important;
+            background-color: transparent !important;
             color: rgb(var(--trans-theme-link-text)) !important;
         }
         a.bg-neutral-200\/50 /* region (when a region is selected) */ {
