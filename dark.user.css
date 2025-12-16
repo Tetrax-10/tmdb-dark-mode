@@ -1687,6 +1687,11 @@
         }
     }
 
+    /* remove static underlines */
+    section.inner_content p a {
+        text-decoration: unset; /* not using important to avoid overwriting hover style */
+    }
+
     /* ------------------------- features ------------------------- */
 
     /* themoviedb-block ads */
